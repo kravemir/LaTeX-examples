@@ -1,0 +1,138 @@
+% add "openany" property to allow chapters begin on even pages
+\documentclass[11pt,a4paper]{book}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[hidelinks,pdftex]{hyperref}
+\usepackage[lastpage,user]{zref}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext, newtxmath}
+\usepackage{blindtext}
+
+% devel package
+%\usepackage{showframe}
+
+% use style from: mystyle.sty
+\usepackage{mystyle}
+
+
+% DOCUMENT INFO 
+\title{Dummy project}
+\author{Miroslav Kravec\\
+  \small{Faculty of Information Technology,}\\
+  \small{Czech Technical University,}\\
+  \small{Prague,}\\
+  \\
+  \small{\texttt{kravemir@fit.cvut.cz}},\\
+  \small{\texttt{kravec.miroslav@gmail.com}}
+}
+\date{\today}
+
+% DOCUMENT PDF INFO
+\makeatletter
+    \AtBeginDocument{
+        \hypersetup{
+            pdftitle = {\@title},
+            pdfauthor = {Miroslav Kravec},
+            pdfkeywords = {dummy, project, some, keywords}
+        }
+    }
+\makeatother
+
+
+% set chapter to be step
+\renewcommand{\chaptername}{Step}
+
+\pagestyle{main}
+\begin{document} 
+
+%set pagestyle to plain - no headers/footers
+\pagestyle{plain}%
+
+% title page
+\maketitle
+
+% contets page
+\tableofcontents
+
+\chapter*{Intro}
+\addcontentsline{toc}{chapter}{Introduction} \markboth{INTRODUCTION}{}
+Personal motivations...\\
+Very brief introduction
+
+% set default/main pagestyle 
+\pagestyle{main}
+
+\chapter{Brief introduction, goals, ideas}
+\section{Current solution problems}
+\section{Goals for the new solution}
+\section{Brief introduction to the new solution}
+
+
+% CHAPTER: Solution design
+
+\chapter{Solution design}
+\section{Part a}
+\blindtext
+\blinditemize
+\blindtext
+\Blindtext
+\section{Part b}
+\blindtext
+\blinditemize
+\blindtext
+\Blindtext
+\section{Part c}
+\blindtext
+\blinditemize
+\blindtext
+\Blindtext
+\section{Part d}
+\blindtext
+\blinditemize
+\blindtext
+\Blindtext
+
+
+% CHAPTER: Solution implementation
+
+\chapter{Solution implementation}
+\section{Part a}
+\blindtext
+\blinditemize
+\blindtext
+\Blindtext
+\section{Part b}
+\blindtext
+\blinditemize
+\blindtext
+\Blindtext
+\section{Part c}
+\blindtext
+\blinditemize
+\blindtext
+\Blindtext
+\section{Part d}
+\blindtext
+\blinditemize
+\blindtext
+\Blindtext
+
+
+% CHAPTER: Results
+
+\chapter{Results}
+\section{Comparison tables, testings}
+\blindtext
+\blinditemize
+
+\section{Conclusion/Summary}
+\blindtext
+
+\subsection*{Successes}
+\blindtext
+
+\subsection*{Fails}
+\blindtext
+
+
+\end{document}
